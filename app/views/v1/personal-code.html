@@ -1,0 +1,67 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  What is the company number? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% include "/includes/phase-banner.html" %}
+{% include "/includes/account-banner.html" %}
+{% include "/includes/back-link.html" %}
+{% endblock %}
+
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <!-- Check for error -->
+      {% if errorPersonal %}
+        {{ govukErrorSummary({
+          titleText: "There is a problem",
+          errorList: errorList
+        }) }}
+      {% endif %}
+      <form action="{{currentUrl}}" method="post">
+
+        <!-- Check for error -->
+        {% if errorPersonal %}
+          <div class="govuk-form-group govuk-form-group--error">
+        {% else %}
+          <div class="govuk-form-group">
+        {% endif %} 
+          <h1 class="govuk-label-wrapper">
+            <label class="govuk-label govuk-label--l" for="personal-code">
+              What is your Companies House personal code?
+            </label>
+          </h1>
+          <div id="personal-code-hint" class="govuk-hint">
+             ...What is a Companies House personal code?...
+          </div>
+          <!-- Check for error -->
+          {% if errorPersonal %}
+          <p id="personal-number-error" class="govuk-error-message">
+            <span class="govuk-visually-hidden">Error:</span> Enter your Companies House personal code
+          </p>
+          {% endif %} 
+          <input class="govuk-input govuk-input--width-10" id="personal-code" name="personal-code" type="text" aria-describedby="personal-code-hint">
+        </div>
+
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              I don't have my Companies House personal code?
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            ...
+          </div>
+        </details>
+      
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}

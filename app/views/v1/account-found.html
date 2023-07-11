@@ -1,0 +1,70 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  You must tell us the reason for the appeal
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "../includes/phase-banner.html" %}
+  {% include "../includes/account-banner.html" %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <!-- Check for error -->
+      {% if errorEmailAccess %}
+        {{ govukErrorSummary({
+          titleText: "There is a problem",
+          errorList: errorList
+        }) }}
+      {% endif %}
+      <form action="{{currentUrl}}" method="post">
+
+        <!-- Check for error -->
+        {% if errorEmailAccess %}
+        <div class="govuk-form-group govuk-form-group--error">
+        {% else %}
+        <div class="govuk-form-group">
+        {% endif %} 
+          <fieldset class="govuk-fieldset" aria-describedby="emailAccess-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">
+                Do you still have access to the email m**s@companieshouse.gov.uk?
+              </h1>
+            </legend>
+            <div id="emailAccess-hint" class="govuk-hint">
+              ...
+            </div>
+            <!-- Check for error -->
+            {% if errorEmailAccess %}
+            <p id="appealReason-error" class="govuk-error-message">
+              <span class="govuk-visually-hidden">Error:</span> You must select a reason
+            </p>
+            {% endif %} 
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="emailAccess" name="emailAccess" type="radio" value="yes">
+                <label class="govuk-label govuk-radios__label" for="emailAccess">
+                  Yes
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="emailAccess-2" name="emailAccess" type="radio" value="no">
+                <label class="govuk-label govuk-radios__label" for="emailAccess-2">
+                  No
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+      </form>
+    </div>
+  </div>
+
+{% endblock %}
