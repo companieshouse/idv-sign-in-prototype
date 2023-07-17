@@ -79,10 +79,7 @@ router.post('/v1/ch-verified', function (req, res) {
   } else {
     if (req.session.data['verified'] === 'yes') {
       res.redirect('/v1/personal-code')
-    } else {
-      // User inputted value so move to next page
-      res.redirect('/v1/other-verified')
-    }
+    } 
   }
 })
 
@@ -278,9 +275,6 @@ router.post('/v1/account-found', function (req, res) {
   } else {
     if (req.session.data['emailAccess'] === 'yes') {
       res.redirect('/v1/access-code')
-    } else {
-      // User inputted value so move to next page
-      res.redirect('/v1/sent-letter')
     }
   }
 })
