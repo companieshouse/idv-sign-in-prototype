@@ -32,17 +32,17 @@
         {% endif %} 
           <h1 class="govuk-label-wrapper">
             <label class="govuk-label govuk-label--l" for="access-code">
-              What is your one-time security code?  
+              Check your email 
             </label>
           </h1>
           <div id="access-code-hint" class="govuk-hint">
-            We sent an email with a security code to p**l@email.co.uk.  
+            We sent an email with a one-time security code to p**l@email.co.uk.  
           </div>
           <!-- Check for error -->
           {% if errorAccessCode %}
           <p id="access-code-error" class="govuk-error-message">
             <span class="govuk-visually-hidden">Error:</span> Enter your access code
-          </p>
+          </p>1.5
           {% endif %} 
           <input class="govuk-input govuk-input--width-10" id="access-code" name="access-code" type="text" aria-describedby="access-code-hint">
         </div>
@@ -54,7 +54,7 @@
             </span>
           </summary>
           <div class="govuk-details__text">
-            <p class="govuk-body">You can <a href="#" class="govuk-link">request a new code</a>.</p>
+            <p class="govuk-body">Check your junk and spam folders. If you have not received our email, You can <a href="#" class="govuk-link">request a new code</a>.</p>
             <p class="govuk-body">If you no longer have access to this email address, we can send your one-time security code to your registered home address. <a href="#" class="govuk-link">Request my code by post</a>. </p>
             <p class="govuk-body">If both your email and your address have changed, please <a href="https://prove-your-identity-prototype.herokuapp.com/v5/pre-one-login/start" class="govuk-link" target="blank">verify your identity</a> again </p>
           </div>

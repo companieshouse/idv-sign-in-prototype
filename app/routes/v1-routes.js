@@ -171,7 +171,7 @@ router.post('/v1/name', function (req, res) {
   if (req.session.data['surname'] === '') {
     // No value so add error to array
     errors.push({
-      text: 'Enter your surname',
+      text: 'Enter your last name',
       href: '#surname'
     })
 

@@ -32,16 +32,16 @@
         {% endif %} 
           <h1 class="govuk-label-wrapper">
             <label class="govuk-label govuk-label--l" for="surname">
-              What is your last name?
+              What is your verified last name?
             </label>
           </h1>
           <div id="surname-hint" class="govuk-hint">
-            We need the same name you verified your identity with so we can find you in our records. If you have changed your name, you can update your records later.  
+            We need the same name you verified your identity with so we can find you in our system. If you have changed your name, you can update your records later.  
           </div>
           <!-- Check for error -->
           {% if errorName %}
           <p id="surname-error" class="govuk-error-message">
-            <span class="govuk-visually-hidden">Error:</span> Enter your surname
+            <span class="govuk-visually-hidden">Error:</span> Enter your last name
           </p>
           {% endif %} 
           <input class="govuk-input govuk-input--width-10" id="surname" name="surname" type="text" aria-describedby="surname-hint">
