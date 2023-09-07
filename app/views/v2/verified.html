@@ -1,0 +1,45 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Confirmation – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+{% include "includes/account-banner.html" %}
+{% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Your verified identity is now connected to {{ data['emailAddress'] }}. 
+      </h1>
+
+      <p>You have successfully linked your verified identity to this email address.  </p>
+
+
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            How many email addresses can I link to my verified identity?
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          As many as you need to. You only need to prove who you are once. 
+          <br>If you use several email addresses to file for different organisations with
+           Companies House, you can connect every relevant email to your identity.
+        </div>
+      </details>
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+    </div>
+  </div>
+
+{% endblock %}
