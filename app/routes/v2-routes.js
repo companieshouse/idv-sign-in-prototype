@@ -2,46 +2,69 @@ const govukPrototypeKit = require('govuk-prototype-kit')
 const router = govukPrototypeKit.requests.setupRouter()
 
 
-// ******* Sign in validation ********************************
-router.get('/v2/sign-in', function (req, res) {
+// ******* Sign in email validation ********************************
+router.get('/v2/sign-in-email', function (req, res) {
   // Set URl
-  res.render('v2/sign-in', {
+  res.render('v2/sign-in-email', {
     currentUrl: req.originalUrl
   })
 })
 
-router.post('/v2/sign-in', function (req, res) {
+router.post('/v2/sign-in-email', function (req, res) {
   // Create empty array and set error variables to false
   var errors = []
-  var emailHasError = false
-  var passwordHasError = false
 
   // Check if user has filled out a email
-  if (req.session.data['emailAddress'] === '') {
+  if (req.session.data['signin-email'] === '') {
     // No value so add error to array
-    emailHasError = true
     errors.push({
       text: 'Enter your email address',
-      href: '#emailAddress'
+      href: '#signin-email'
     })
   }
 
-  // Check if user has filled out a password
-  if (req.session.data['password'] === '') {
-    // No value so add error to array
-    passwordHasError = true
-    errors.push({
-      text: 'Enter your password',
-      href: '#password'
-    })
-  }
 
   // Check if eother filed not filled out
-  if (emailHasError || passwordHasError) {
+  if (req.session.data['signin-email'] === '') {
     // Re-show page with error value as true so errors will show
-    res.render('v2/sign-in', {
-      errorEmail: emailHasError,
-      errorPassword: passwordHasError,
+    res.render('v2/sign-in-email', {
+      errorSigninEmail: true,
+      errorList: errors
+    })
+  } else {
+    // User inputted value so move to next page
+    res.redirect('/v2/sign-in-password')
+  }
+})
+
+
+// ******* Sign in password validation ********************************
+router.get('/v2/sign-in-password', function (req, res) {
+  // Set URl
+  res.render('v2/sign-in-password', {
+    currentUrl: req.originalUrl
+  })
+})
+
+router.post('/v2/sign-in-password', function (req, res) {
+  // Create empty array and set error variables to false
+  var errors = []
+
+  // Check if user has filled out a email
+  if (req.session.data['signin-password'] === '') {
+    // No value so add error to array
+    errors.push({
+      text: 'Enter your password',
+      href: '#signin-password'
+    })
+  }
+
+
+  // Check if eother filed not filled out
+  if (req.session.data['signin-password'] === '') {
+    // Re-show page with error value as true so errors will show
+    res.render('v2/sign-in-password', {
+      errorSigninPassword: true,
       errorList: errors
     })
   } else {
@@ -96,42 +119,78 @@ router.get('/v2/sign-in-verified', function (req, res) {
 })
 
 router.post('/v2/sign-in-verified', function (req, res) {
+  res.redirect('/v2/verified-email')
+})
+
+
+// ******* verified-email ********************************
+router.get('/v2/verified-email', function (req, res) {
+  // Set URl
+  res.render('v2/verified-email', {
+    currentUrl: req.originalUrl
+  })
+})
+
+router.post('/v2/verified-email', function (req, res) {
   // Create empty array and set error variables to false
   var errors = []
-  var emailHasError = false
-  var passwordHasError = false
 
   // Check if user has filled out a email
-  if (req.session.data['emailAddressVerified'] === '') {
+  if (req.session.data['verified-email'] === '') {
     // No value so add error to array
-    emailHasError = true
     errors.push({
-      text: 'Enter the email address of your verified account',
-      href: '#emailAddressVerified'
+      text: 'Enter your email address',
+      href: '#verified-email'
     })
   }
 
-  // Check if user has filled out a password
-  if (req.session.data['passwordVerified'] === '') {
-    // No value so add error to array
-    passwordHasError = true
-    errors.push({
-      text: 'Enter the password of your verified account',
-      href: '#passwordVerified'
-    })
-  }
 
-  // Check if other filed not filled out
-  if (emailHasError || passwordHasError) {
-    res.render('v2/sign-in-verified', {
-      errorEmailVerified: emailHasError,
-      errorPasswordVerified: passwordHasError,
+  // Check if eother filed not filled out
+  if (req.session.data['verified-email'] === '') {
+    // Re-show page with error value as true so errors will show
+    res.render('v2/verified-email', {
+      errorVerifiedEmail: true,
       errorList: errors
     })
-  } else if (req.session.data['passwordVerified'] === 'password'){
-    res.redirect('/v2/verified')
   } else {
-    res.redirect('/v2/not-verified')
+    // User inputted value so move to next page
+    res.redirect('/v2/verified-password')
+  }
+})
+
+
+// ******* verified-password ********************************
+router.get('/v2/verified-password', function (req, res) {
+  // Set URl
+  res.render('v2/verified-password', {
+    currentUrl: req.originalUrl
+  })
+})
+
+router.post('/v2/verified-password', function (req, res) {
+  // Create empty array and set error variables to false
+  var errors = []
+
+  // Check if user has filled out a email
+  if (req.session.data['verified-password'] === '') {
+    // No value so add error to array
+    errors.push({
+      text: 'Enter your password',
+      href: '#verified-password'
+    })
+  }
+
+
+  // Check if eother filed not filled out
+  if (req.session.data['verified-password'] === '') {
+    // Re-show page with error value as true so errors will show
+    res.render('v2/verified-password', {
+      errorVerifiedPassword: true,
+      errorList: errors
+    })
+  } else {
+    // User inputted value so move to next page
+    res.redirect('/v2/verified')
   }
 })
 

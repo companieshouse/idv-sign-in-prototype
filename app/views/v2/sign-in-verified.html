@@ -15,56 +15,13 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <!-- Check for error -->
-      {% if errorEmailVerified or errorPasswordVerified %}
-        {{ govukErrorSummary({
-          titleText: "There is a problem",
-          errorList: errorList
-        }) }}
-      {% endif %}
       <form action="{{currentUrl}}" method="post">
 
-        <h1 class="govuk-heading-l">Enter the email address and password of your verified account</h1>
+        <h1 class="govuk-heading-l">You need to sign into you other One Login account</h1>
 
         <p class="govuk-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
           Maecenas elementum pretium urna, eget convallis sapien dapibus eu. In hac habitasse 
           platea dictumst.</p>
-
-        <!-- Check for error -->
-        {% if errorEmailVerified %}
-          <div class="govuk-form-group govuk-form-group--error">
-        {% else %}
-          <div class="govuk-form-group">
-        {% endif %} 
-            <label class="govuk-label" for="emailAddressVerified">
-              Email address
-            </label>
-            <!-- Check for error -->
-          {% if errorEmailVerified %}
-            <p id="emailAddressVerified-error" class="govuk-error-message">
-              <span class="govuk-visually-hidden">Error:</span> Enter the email address of your verified account
-            </p>
-          {% endif %} 
-            <input class="govuk-input" id="emailAddressVerified" name="emailAddressVerified" type="text">
-        </div>
-
-        <!-- Check for error -->
-        {% if errorPasswordVerified %}
-          <div class="govuk-form-group govuk-form-group--error">
-        {% else %}
-          <div class="govuk-form-group">
-        {% endif %} 
-            <label class="govuk-label" for="passwordVerified">
-              Password
-            </label>
-          <!-- Check for error -->
-          {% if errorPasswordVerified %}
-            <p id="passwordVerified-error" class="govuk-error-message">
-              <span class="govuk-visually-hidden">Error:</span> Enter the password of your verified account
-            </p>
-          {% endif %} 
-            <input class="govuk-input" id="passwordVerified" name="passwordVerified" type="text">
-        </div>
       
         {{ govukButton({
           text: "Continue"
