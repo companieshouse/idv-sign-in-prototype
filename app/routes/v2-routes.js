@@ -189,8 +189,12 @@ router.post('/v2/verified-password', function (req, res) {
       errorList: errors
     })
   } else {
-    // User inputted value so move to next page
-    res.redirect('/v2/verified')
+    if (req.session.data['verified-password'] == 'password' ) {
+      res.redirect('/v2/verified')
+    } else {
+      // User inputted value so move to next page
+      res.redirect('/v2/not-verified')
+    }
   }
 })
 
