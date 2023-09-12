@@ -119,7 +119,7 @@ router.get('/v2/sign-in-verified', function (req, res) {
 })
 
 router.post('/v2/sign-in-verified', function (req, res) {
-  res.redirect('/v2/verified-email')
+  res.redirect('/v2/verify-create-or-sign-in')
 })
 
 

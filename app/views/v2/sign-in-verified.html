@@ -17,10 +17,13 @@
 
       <form action="{{currentUrl}}" method="post">
 
-        <h1 class="govuk-heading-l">You need to sign into your other GOV.UK One Login</h1>
+        <h1 class="govuk-heading-l">You need to register or sign into GOV.UK One Login</h1>
 
         <p class="govuk-body">Your verified identity is connected to the email address 
-          you used for GOV.UK One Login when you did your verification.</p>
+          you used when you did your verification. This is because we need to connect you 
+          to your verified account</p>
+
+          <p class="govuk-body">if you verified with an agent use the email address they gave us</p>
       
         {{ govukButton({
           text: "Continue"
