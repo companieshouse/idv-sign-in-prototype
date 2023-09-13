@@ -16,23 +16,11 @@
     <div class="govuk-grid-column-two-thirds">
 
       <h1 class="govuk-heading-l">
-        Your verified identity is now connected to {{ data['signin-email'] }}. 
+        Your verified identity is now connected to {{ data['signin-email'] }} 
       </h1>
 
-      <p>You have successfully linked your verified identity to this email address.  </p>
-
-
-      <details class="govuk-details" data-module="govuk-details">
-        <summary class="govuk-details__summary">
-          <span class="govuk-details__summary-text">
-            Can I link more email addresses to my verified identity?
-          </span>
-        </summary>
-        <div class="govuk-details__text">
-          Yes. You can connect other email addresses to your 
-          verified identity, as long as you have access to the account.
-        </div>
-      </details>
+      <p>You can connect other email addresses to your verified identity too, 
+        as long as you have access to them.    </p>
 
       {{ govukButton({
         text: "Continue"

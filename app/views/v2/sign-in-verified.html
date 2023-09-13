@@ -17,13 +17,23 @@
 
       <form action="{{currentUrl}}" method="post">
 
-        <h1 class="govuk-heading-l">You need to register or sign into GOV.UK One Login</h1>
+        <h1 class="govuk-heading-l">You need to sign in with the email address you 
+          used when you verified your identity </h1>
 
-        <p class="govuk-body">Your verified identity is connected to the email address 
-          you used when you did your verification. This is because we need to connect you 
-          to your verified account</p>
+        <p class="govuk-body">You’ve signed in with shorton@companieshouse.gov.uk. 
+          However, you provided a different email 
+          address when you verified your identity.</p>
+        
+        <p class="govuk-body">On the next screen, you need to sign in to your 
+          GOV.UK One Login with the email address you provided when you 
+          verified. This is so that we can connect you to your verified 
+          identity. </p>
 
-          <p class="govuk-body">if you verified with an agent use the email address they gave us</p>
+        <p class="govuk-body">If you have not created a GOV.UK One Login yet 
+          using that email address, you need to create one.</p>
+
+        <p class="govuk-body">If you verified your identity using an authorised 
+          agent, use the email address they gave us.</p>
       
         {{ govukButton({
           text: "Continue"

@@ -15,16 +15,23 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-l">
-        Your verified identity is not connected to this email address
+      <h1 class="govuk-heading-l">We are unable to connect your 
+        verified identity to {{ data['verified-email'] }}
       </h1>
 
-      <p class="govuk-body">We don't have a current record for your 
-        verified identity with this email address. If you verified when 
-        signed in with a different email, go back and try again.</p>
+      <p class="govuk-body">
+        If you provided a different email address when you verified your 
+        identity, you can 
+        <a href="verify-create-or-sign-in" class="govuk-link">
+          go back and try again
+        </a>.
+      </p>
 
-      <p class="govuk-body">Otherwise,<a class="govuk-link govuk-link--no-visited-state" href="https://prove-your-identity-prototype.herokuapp.com/v5/pre-one-login/start" target="blank">
-        Verify your identity for Companies House service (opens in a new tab)</a>.</b>
+      <p class="govuk-body">
+        If you haven’t verified your identity yet, use the,
+        <a class="govuk-link govuk-link--no-visited-state" href="https://prove-your-identity-prototype.herokuapp.com/v5/pre-one-login/start" target="blank">
+          Verify your identity for Companies House service
+        </a>.
       </p>
 
     </div>
