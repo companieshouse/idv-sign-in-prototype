@@ -102,9 +102,6 @@ router.post('/v2/ch-verified', function (req, res) {
   } else {
     if (req.session.data['verified'] === 'yes') {
       res.redirect('/v2/sign-in-verified')
-    } else {
-      // User inputted value so move to next page
-      res.redirect('/v2/go-verify')
     }
   }
 })
