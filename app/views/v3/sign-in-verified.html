@@ -1,0 +1,43 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  What is the company number? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% include "/includes/phase-banner.html" %}
+{% include "/includes/account-banner.html" %}
+{% include "/includes/back-link.html" %}
+{% endblock %}
+
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form action="{{currentUrl}}" method="post">
+
+        <h1 class="govuk-heading-l">You need to sign in with the email address you 
+          used when you verified your identity </h1>
+
+        <p class="govuk-body">You’ve signed in with <b>{{ data['signin-email'] }}</b>. 
+          However, this is not the email address you provided when you verified your identity.</p>
+        
+        <p class="govuk-body">On the next screen, you need to sign in to your 
+          GOV.UK One Login with the email address you provided when you 
+          verified. This is so that we can connect you to your verified 
+          identity. </p>
+
+        <p class="govuk-body">If you have not created a GOV.UK One Login yet 
+          using that email address, you need to create one.</p>
+
+        <p class="govuk-body">If you verified your identity using an authorised 
+          agent, use the email address they gave us.</p>
+      
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}
