@@ -17,3 +17,11 @@
     vertical-align: middle;
     padding-bottom: 20px;
 }
+
+// Failed confirmation
+
+.ch-panel--failure {
+    background-color: govuk-colour("white");
+    border: 2px solid govuk-colour("black");
+    color: govuk-colour("black");
+  }
