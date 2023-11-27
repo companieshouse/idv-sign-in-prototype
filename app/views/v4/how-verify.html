@@ -35,11 +35,7 @@ Are you resident in the UK?
             </h1>
   
           </legend>
-          <div id="how-did-you-verify-hint" class="govuk-hint">
-            There are two ways to verify. You may have done it yourself with 
-            the GOV.UK One Login service, or you may have asked an agent, 
-            such as your accountant or solicitor, to verify on your behalf.
-          </div>
+        
           <!-- Check for error -->
           {% if errorHowVerify %}
           <p id="how-did-you-verify-error" class="govuk-error-message">
@@ -57,8 +53,17 @@ Are you resident in the UK?
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="how-did-you-verify-2" name="how-did-you-verify" type="radio" value="acsp">
               <label class="govuk-label govuk-radios__label" for="how-did-you-verify-2">
-                I verified with an agent
+                I verified at the Post Office
               </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="how-did-you-verify-2" name="how-did-you-verify" type="radio" value="acsp">
+              <label class="govuk-label govuk-radios__label" for="how-did-you-verify-2">
+                I verified with a Companies House authorised agent
+              </label>
+              <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
+                This is an agent, such as an accountant or solicitor, who would have verified your identity on your behalf.
+              </div>
             </div>
           </div>
         </fieldset>
