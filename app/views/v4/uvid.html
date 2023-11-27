@@ -35,7 +35,7 @@ Enter your one login email
           </h1>
         </legend>
         <div id="passport-issued-hint" class="govuk-hint">
-         The code is 11 characters long. We'll have sent your personal code to you by email or letter.
+         The code is 11 characters long. 
         </div>
             <!-- Check for error -->
           {% if errorUvid %}
@@ -46,7 +46,30 @@ Enter your one login email
             <input class="govuk-input govuk-input--width-20" id="uvid" name="uvid" type="text">
         </div>
 
-       
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              How to find your personal code
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            You can see your code in the 'Manage account' section when you sign in to your Companies House account.
+          </div>
+          <div class="govuk-details__text">
+            If your Companies House authorised agent didn't provide us with your email address, we'll have sent your personal code to you by letter.
+          </div>
+          <div class="govuk-details__text">
+            If you can't find your code, you'll need to 
+              <a href="https://prove-your-identity-prototype.herokuapp.com/release1-v3/pre-one-login/start?version=general" class="govuk-link" rel="noreferrer noopener" >verify your identity</a> again.
+            
+          </div>
+
+         
+
+          <div class="govuk-details__text">
+            
+          </div>
+        </details>
 
       {{ govukButton({
         text: "Continue"
