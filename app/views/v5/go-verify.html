@@ -1,0 +1,37 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Confirmation – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+{% include "includes/account-banner.html" %}
+{% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        You need to verify your identity with Companies House
+      </h1>
+
+      <p class="govuk-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+        Maecenas elementum pretium urna, eget convallis sapien dapibus eu. In hac habitasse 
+        platea dictumst.</p>
+
+      <p class="govuk-body"><a class="govuk-link govuk-link--no-visited-state" href="https://prove-your-identity-prototype.herokuapp.com/v5/pre-one-login/start" target="blank">
+        Verify your identity for Companies House service (opens in a new tab)</a>.</b>
+      </p>
+
+      <p class="govuk-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+        Maecenas elementum pretium urna, eget convallis sapien dapibus eu. In hac habitasse 
+        platea dictumst.</p>
+
+    </div>
+  </div>
+
+{% endblock %}

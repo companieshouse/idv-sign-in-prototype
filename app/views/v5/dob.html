@@ -1,0 +1,99 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Appeal due to ill health: Tell us when the illness ended
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "../includes/phase-banner.html" %}
+  {% include "../includes/account-banner.html" %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+    <!-- Check for error -->
+    {% if errorDob %}
+      {{ govukErrorSummary({
+        titleText: "There is a problem",
+        errorList: errorList
+      }) }}
+    {% endif %}
+
+    <form action="{{currentUrl}}" method="post">
+
+      <!-- Check for error -->
+      {% if errorDobDayOne or errorDobMonthOne or errorDobYearOne %}
+      <div class="govuk-form-group govuk-form-group--error">
+      {% else %}
+      <div class="govuk-form-group">
+      {% endif %} 
+        <fieldset class="govuk-fieldset" role="group" aria-describedby="Dob-hint">
+          <h1 class="govuk-label-wrapper">
+            <label class="govuk-label govuk-label--l" for="uvid">
+              What is your date of birth?
+            </label>
+          </h1>
+          <!-- Check for error -->
+          {% if errorDobDayOne or errorDobMonthOne or errorDobYearOne %}
+          <p id="Dob-error" class="govuk-error-message">
+            <span class="govuk-visually-hidden">Error:</span> The date must include a day, month and year
+          </p>
+          {% endif %} 
+          <div id="Dob-hint" class="govuk-hint">
+            For example, 27 3 1992
+          </div>
+          <div class="govuk-date-input" id="Dob">
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="Dob-day-one">
+                  Day
+                </label>
+                <!-- Check for error -->
+                {% if errorDobDayOne %}
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2 govuk-input--error" id="Dob-day-one" name="Dob-day-one" type="text">
+                {% else %}
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="Dob-day-one" name="Dob-day-one" type="text">
+                {% endif %} 
+              </div>
+            </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="Dob-month-one">
+                  Month
+                </label>
+                <!-- Check for error -->
+                {% if errorDobMonthOne %}
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2 govuk-input--error" id="Dob-month-one" name="Dob-month-one" type="text">
+                {% else %}
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="Dob-month-one" name="Dob-month-one" type="text">
+                {% endif %} 
+              </div>
+            </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="Dob-year-one">
+                  Year
+                </label>
+                <!-- Check for error -->
+                {% if errorDobYearOne %}
+                <input class="govuk-input govuk-date-input__input govuk-input--width-4 govuk-input--error" id="Dob-year-one" name="Dob-year-one" type="text">
+                {% else %}
+                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="Dob-year-one" name="Dob-year-one" type="text">
+                {% endif %} 
+              </div>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+    </form>
+    </div>
+  </div>
+
+{% endblock %}

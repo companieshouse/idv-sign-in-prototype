@@ -1,0 +1,32 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Confirmation – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+{% include "includes/account-banner.html" %}
+{% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Your verified identity is now linked to {{ data['signin-email'] }} 
+      </h1>
+
+      <p>You can connect other email addresses to your verified identity too, 
+        as long as you have access to them.    </p>
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+    </div>
+  </div>
+
+{% endblock %}

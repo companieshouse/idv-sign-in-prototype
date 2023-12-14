@@ -1,0 +1,38 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Confirmation – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+{% include "includes/account-banner.html" %}
+{% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">We are unable to link your 
+        verified identity to {{ data['signin-email'] }}
+      </h1>
+
+      <p class="govuk-body">
+        Check if you typed your email address correctly. If you 
+        provided a different email address when you verified your identity, you can 
+        <a href="verify-create-or-sign-in" class="govuk-link">
+          go back and try again</a>.
+      </p>
+
+      <p class="govuk-body">
+        If you haven’t verified your identity yet, use the
+        <a class="govuk-link govuk-link--no-visited-state" href="https://prove-your-identity-prototype.herokuapp.com/v5/pre-one-login/start" target="blank">
+          Verify your identity for Companies House service</a>.
+      </p>
+
+    </div>
+  </div>
+
+{% endblock %}
