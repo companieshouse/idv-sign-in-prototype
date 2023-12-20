@@ -5,7 +5,7 @@ const router = govukPrototypeKit.requests.setupRouter()
 // ******* Sign in email validation ********************************
 router.get('/v5/sign-in-email', function (req, res) {
   // Set URl
-  res.render('v4/sign-in-email', {
+  res.render('v5/sign-in-email', {
     currentUrl: req.originalUrl
   })
 })
@@ -27,7 +27,7 @@ router.post('/v5/sign-in-email', function (req, res) {
   // Check if eother filed not filled out
   if (req.session.data['signin-email'] === '') {
     // Re-show page with error value as true so errors will show
-    res.render('v4/sign-in-email', {
+    res.render('v5/sign-in-email', {
       errorSigninEmail: true,
       errorList: errors
     })
@@ -41,7 +41,7 @@ router.post('/v5/sign-in-email', function (req, res) {
 // ******* Sign in password validation ********************************
 router.get('/v5/sign-in-password', function (req, res) {
   // Set URl
-  res.render('v4/sign-in-password', {
+  res.render('v5/sign-in-password', {
     currentUrl: req.originalUrl
   })
 })
@@ -63,7 +63,7 @@ router.post('/v5/sign-in-password', function (req, res) {
   // Check if eother filed not filled out
   if (req.session.data['signin-password'] === '') {
     // Re-show page with error value as true so errors will show
-    res.render('v4/sign-in-password', {
+    res.render('v5/sign-in-password', {
       errorSigninPassword: true,
       errorList: errors
     })
@@ -77,7 +77,7 @@ router.post('/v5/sign-in-password', function (req, res) {
 // ******* ch-verified javascript ********************************
 router.get('/v5/ch-verified', function (req, res) {
   // Set URl
-  res.render('v4/ch-verified', {
+  res.render('v5/ch-verified', {
     currentUrl: req.originalUrl
   })
 })
@@ -95,7 +95,7 @@ router.post('/v5/ch-verified', function (req, res) {
     })
 
     // Re-show page with error value as true so errors will show
-    res.render('v4/ch-verified', {
+    res.render('v5/ch-verified', {
       errorVerified: true,
       errorList: errors
     })
@@ -110,7 +110,7 @@ router.post('/v5/ch-verified', function (req, res) {
 // ******* how-verify javascript ********************************
 router.get('/v5/how-verify', function (req, res) {
   // Set URl
-  res.render('v4/how-verify', {
+  res.render('v5/how-verify', {
     currentUrl: req.originalUrl
   })
 })
@@ -128,7 +128,7 @@ router.post('/v5/how-verify', function (req, res) {
     })
 
     // Re-show page with error value as true so errors will show
-    res.render('v4/how-verify', {
+    res.render('v5/how-verify', {
       errorHowVerify: true,
       errorList: errors
     })
@@ -145,7 +145,7 @@ router.post('/v5/how-verify', function (req, res) {
 // ******* how-verify javascript ********************************
 router.get('/v5/dob', function (req, res) {
   // Set URl
-  res.render('v4/dob', {
+  res.render('v5/dob', {
     currentUrl: req.originalUrl
   })
 })
@@ -196,7 +196,7 @@ router.post('/v5/dob', function (req, res) {
   // Check if eother filed not filled out
   if (dobError) {
     // Re-show page with error value as true so errors will show
-    res.render('v4/dob', {
+    res.render('v5/dob', {
       errorDobDayOne: dayHasError,
       errorDobMonthOne: monthHasError,
       errorDobYearOne: yearHasError,
@@ -217,7 +217,7 @@ router.post('/v5/dob', function (req, res) {
 // ******* uvid validation ********************************
 router.get('/v5/uvid', function (req, res) {
   // Set URl
-  res.render('v4/uvid', {
+  res.render('v5/uvid', {
     currentUrl: req.originalUrl
   })
 })
@@ -239,7 +239,7 @@ router.post('/v5/uvid', function (req, res) {
   // Check if eother filed not filled out
   if (req.session.data['uvid'] === '') {
     // Re-show page with error value as true so errors will show
-    res.render('v4/uvid', {
+    res.render('v5/uvid', {
       errorUvid: true,
       errorList: errors
     })
@@ -253,7 +253,7 @@ router.post('/v5/uvid', function (req, res) {
 // ******* sign-in-verified ********************************
 router.get('/v5/sign-in-verified', function (req, res) {
   // Set URl
-  res.render('v4/sign-in-verified', {
+  res.render('v5/sign-in-verified', {
     currentUrl: req.originalUrl
   })
 })
@@ -266,7 +266,7 @@ router.post('/v5/sign-in-verified', function (req, res) {
 // ******* verified-email ********************************
 router.get('/v5/verified-email', function (req, res) {
   // Set URl
-  res.render('v4/verified-email', {
+  res.render('v5/verified-email', {
     currentUrl: req.originalUrl
   })
 })
@@ -288,7 +288,7 @@ router.post('/v5/verified-email', function (req, res) {
   // Check if eother filed not filled out
   if (req.session.data['verified-email'] === '') {
     // Re-show page with error value as true so errors will show
-    res.render('v4/verified-email', {
+    res.render('v5/verified-email', {
       errorVerifiedEmail: true,
       errorList: errors
     })
@@ -302,7 +302,7 @@ router.post('/v5/verified-email', function (req, res) {
 // ******* verified-password ********************************
 router.get('/v5/verified-password', function (req, res) {
   // Set URl
-  res.render('v4/verified-password', {
+  res.render('v5/verified-password', {
     currentUrl: req.originalUrl
   })
 })
@@ -324,7 +324,7 @@ router.post('/v5/verified-password', function (req, res) {
   // Check if eother filed not filled out
   if (req.session.data['verified-password'] === '') {
     // Re-show page with error value as true so errors will show
-    res.render('v4/verified-password', {
+    res.render('v5/verified-password', {
       errorVerifiedPassword: true,
       errorList: errors
     })
