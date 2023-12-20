@@ -32,13 +32,16 @@ Have you been verifed?
         <fieldset class="govuk-fieldset" aria-describedby="verified-hint">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
             <h1 class="govuk-fieldset__heading">
-              Have you already verified your identity for Companies House?
+              Have you got a Companies House personal code?
             </h1>
              <!--<div id="verified-hint" class="govuk-hint">
               If you have already verified your identity, we will have 
               sent you a Companies House personal code by email or post.
             </div>-->
           </legend>
+          <div id="signIn-hint" class="govuk-hint">
+            You’ll have a personal code if you’ve verified your identity for Companies House.
+          </div>
           <!-- Check for error -->
           {% if errorVerified %}
           <p id="verified-error" class="govuk-error-message">
@@ -66,17 +69,17 @@ Have you been verifed?
        <details class="govuk-details" data-module="govuk-details">
         <summary class="govuk-details__summary">
           <span class="govuk-details__summary-text">
-            How do I know if I’ve verified my identity?
+            Where can I find my personal code?
           </span>
         </summary>
         <div class="govuk-details__text">
- If you've already verified, you'll have a Companies House personal code. 
+          We emailed your code to you when you, or a Companies House authorised agent, verified your identity (if you provided your email address). The subject line is ‘Companies House personal code’. 
 </div>
 <div class="govuk-details__text">
-          You can see your code in the 'Manage account' section when you sign in to your Companies House account using the email address you verified with.
+  You can also see your code in the 'Manage account' section when you sign in to your Companies House account using the email address you verified with.
         </div>
         <div class="govuk-details__text">
-          If you verified using a Companies House authorised agent, and they didn't provide us with your email address, we'll have sent your personal code to you by letter.
+          If you verified using an authorised agent, and they didn't provide us with your email address, we'll have sent your personal code to you by letter.
         </div>
 
       </details> 
