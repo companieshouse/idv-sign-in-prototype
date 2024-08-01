@@ -1,0 +1,80 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Are you resident in the UK?
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+  {% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <!-- Check for error -->
+    {% if errorHowVerify %}
+      {{ govukErrorSummary({
+        titleText: "There is a problem",
+        errorList: errorList
+      }) }}
+    {% endif %}
+    <form action="{{currentUrl}}" method="post">
+
+      <!-- Check for error -->
+      {% if errorHowVerify %}
+      <div class="govuk-form-group govuk-form-group--error">
+      {% else %}
+      <div class="govuk-form-group">
+      {% endif %} 
+        <fieldset class="govuk-fieldset" aria-describedby="how-did-you-verify-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+            How did you verify your identity with Companies House?
+            </h1>
+  
+          </legend>
+        
+          <!-- Check for error -->
+          {% if errorHowVerify %}
+          <p id="how-did-you-verify-error" class="govuk-error-message">
+            <span class="govuk-visually-hidden">Error:</span> Select how you verified with Companies House
+          </p>
+          {% endif %} 
+
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="how-did-you-verify" name="how-did-you-verify" type="radio" value="onelogin">
+              <label class="govuk-label govuk-radios__label" for="how-did-you-verify">
+                I verified with GOV.UK One Login
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="how-did-you-verify-2" name="how-did-you-verify" type="radio" value="onelogin">
+              <label class="govuk-label govuk-radios__label" for="how-did-you-verify-2">
+                I verified at the Post Office
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="how-did-you-verify-3" name="how-did-you-verify" type="radio" value="acsp">
+              <label class="govuk-label govuk-radios__label" for="how-did-you-verify-3">
+                I verified with a Companies House authorised agent
+              </label>
+              <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
+                This is an agent, such as an accountant or solicitor, who would have verified your identity on your behalf.
+              </div>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+    </form>
+  </div>
+</div>
+
+{% endblock %}
